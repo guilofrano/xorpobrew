@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.3">
+			<file name="source.xml" url="https://raw.githubusercontent.com/guilofrano/xorpobrew/main/source.xml" />
+		</update>
+	</info>
+	<element name="XorpoBrew" type="Source" source="XorpoBrew" id="ID_SOURCE_XORPOBREW">
+		<description>
+			<p><strong>Just making stuff for fun.</strong></p>
+		</description>
+		<setters>
+			<set name="abbreviation">XPB</set>
+			<set name="url">https://github.com/guilofrano/xorpobrew</set>
+			<set name="image">https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/PHB.png</set>
+			<set name="author" abbreviation="XPB" url="https://github.com/guilofrano/xorpobrew">GLC</set>
+			<set name="official">false</set>
+			<set name="core">false</set>
+			<set name="release">2023-09-06</set>
+		</setters>
+	</element>
+</elements>

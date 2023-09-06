@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.1.0">
+			<file name="rogue-connected.xml" url="https://raw.githubusercontent.com/guilofrano/xorpobrew/main/archetypes/rogue-connected.xml" />
+		</update>
+	</info>
+
+	<element name="Connected" type="Archetype" source="XorpoBrew" id="ID_XPB_CONNECTED">
+		<supports>Roguish Archetype</supports>
+		<description>
+			<p>You specialized in solving problems, often by illegal or unethical means. You have contacts in various underworld circles and can arrange anything from smuggling goods to assassinating targets. You are always looking for the next opportunity or scam to make a profit, and you use your contacts to get anything you want</p>
+			<div element="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYCONNECTIONS" />
+			<div element="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYCONNECTIONS_FAVORS" />
+			<div element="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYCONNECTIONS_WHISPERNETWORK" />
+			<div element="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYCONNECTIONS_WHISPERNETWORK_UNDERWORLDCONTACTS" />
+			<div element="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYCONNECTIONS_WHISPERNETWORK_COURIER" />
+			<div element="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYCONNECTIONS_WHISPERNETWORK_GOSSIP" />
+			<div element="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYCONNECTIONS_WHISPERNETWORK_GOSSIP_PARTOFTHECREW" />
+			<div element="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_DIRTYTRICKS" />
+			<div element="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYBUSINESS" />
+			<div element="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_POWEBROKER" />
+		</description>
+		<rules>
+			<grant type="Archetype Feature" id="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYCONNECTIONS" level="3"/>
+			<grant type="Archetype Feature" id="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_DIRTYTRICKS" level="9"/>
+			<grant type="Archetype Feature" id="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYBUSINESS" level="13"/>
+			<grant type="Archetype Feature" id="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_POWEBROKER" level="17"/>
+		</rules>
+	</element>
+	<element name="Shady Connections" type="Archetype Feature" source="XorpoBrew" id="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYCONNECTIONS">
+		<requirements>!ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYCONNECTIONS</requirements>
+		<description>
+			<p>When you choose this archetype at 3rd level, you make a mystical pact with a network of shady individuals, where you can cash in you Favors. You must choose a token that binds you to the network, such as a coin, a ring, or an amulet. If you lose this token, you must perform a ritual to unbind the old token from the network before choosing a new one. the ritual takes 1d6 hours and can only be performed again after 7 days. Binding a new token is instantaneous after the ritual.</p>
+			<div element="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYCONNECTIONS_FAVORS"/>
+		</description>
+		<sheet>
+			<description>You have a mystical pact with a network of shady individuals, where you can cash in you Favors. You must choose a token that binds you to the network, such as a coin, a ring, or an amulet. If you lose this token, you must perform a ritual to unbind the old token from the network before choosing a new one. the ritual takes 1d6 hours and can only be performed again after 7 days. Binding a new token is instantaneous after the ritual.</description>
+			<grant type="Archetype Feature" id="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYCONNECTIONS_FAVORS" />
+		</sheet>
+	</element>
+	<element name="Favors" type="Archetype Feature" source="XorpoBrew" id="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYCONNECTIONS_FAVORS">
+		<requirements>!ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYCONNECTIONS_FAVORS</requirements>
+		<description>You have a number of favors that you can use to contact your whisper network and ask them for help. You have a number of favors equal to your Charisma modifier (minimum of one) and you increase one more maximum favor at levels 3, 9, 13 and 17. You regain all expended favors at dawn.</description>
+		<sheet usage="{{favors:count}}/Dawn">
+			<description>You have a number of favors that you can use to contact your whisper network and ask them for help.</description>
+			<rules>
+				<stat name="favors:count" value="1+charisma:modifier" level="3"/>
+				<stat name="favors:count" value="2+charisma:modifier" level="9"/>
+				<stat name="favors:count" value="3+charisma:modifier" level="13"/>
+				<stat name="favors:count" value="4+charisma:modifier" level="17"/>
+				<stat name="favors:count" value="5+charisma:modifier" level="20"/>
+			</rules>
+		</sheet>
+	</element>
+	<element name="Whisper Network" type="Archetype Feature" source="XorpoBrew" id="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYCONNECTIONS_WHISPERNETWORK">
+		<requirements>!ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_WHISPERNETWORK</requirements>
+		<description>
+			<p>You have access to a secret network of informants, spies, and agents who can help you with various tasks and challenges. You can expend one or more favors to activate your token and whisper your request. The network will reply with a helpful hint or resource, depending on how many favors you spend. Every time you use the network you must wait 1d6x10 minutes for it to respond or provide the requested resource.</p>
+			<div id="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYCONNECTIONS_WHISPERNETWORK_UNDERWORLDCONTACTS"/>
+			<div id="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYCONNECTIONS_WHISPERNETWORK_COURIER"/>
+			<div id="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYCONNECTIONS_WHISPERNETWORK_GOSSIP"/>
+		</description>
+		<sheet>
+			<description>You have access to a secret network of informants, spies, and agents who can help you with various tasks and challenges. You can expend one or more favors to activate your token and whisper your request. The network will reply with a helpful hint or resource, depending on how many favors you spend. Every time you use the network you must wait 1d6x10 minutes for it to respond or provide the requested resource.</description>
+			<grant type="Archetype Feature" id="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYCONNECTIONS_WHISPERNETWORK_UNDERWORLDCONTACTS" level="3"/>
+			<grant type="Archetype Feature" id="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYCONNECTIONS_WHISPERNETWORK_COURIER" level="5"/>
+			<grant type="Archetype Feature" id="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYCONNECTIONS_WHISPERNETWORK_GOSSIP" level="7"/>
+		</sheet>
+	</element>
+	<element name="Underworld Contacts" type="Archetype Feature" source="XorpoBrew" id="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYCONNECTIONS_WHISPERNETWORK_UNDERWORLDCONTACTS">
+		<requirements>!ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYCONNECTIONS_WHISPERNETWORK_UNDERWORLDCONTACTS</requirements>
+		<description>At 3rd level you have access to a pool of contacts who can help you with various tasks and challenges. You can expend one or more favors to contact one of your allies and ask them for advice on a skill check that you are about to make. The ally grants you advantage on the skill check, and you can add an additional dice roll depending on how many favors you spend: 1d4 + 2 for one favor, 1d4 + 5 for two favors, or 1d4 + 8 for three favors. You can only do this before the starting the skill check. You can use this feature only once per skill check.</description>
+		<sheet>
+			<description>You have access to a pool of contacts who can help you with various tasks and challenges. You can expend one or more favors to contact one of your allies and ask them for advice on a skill check that you are about to make. The ally grants you advantage on the skill check, and you can add an additional dice roll depending on how many favors you spend: 1d4 + 2 for one favor, 1d4 + 5 for two favors, or 1d4 + 8 for three favors. You can only do this before the starting the skill check. You can use this feature only once per skill check.</description>
+		</sheet>
+	</element>
+	<element name="Courier" type="Archetype Feature" source="XorpoBrew" id="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYCONNECTIONS_WHISPERNETWORK_COURIER">
+		<requirements>!ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYCONNECTIONS_WHISPERNETWORK_COURIER</requirements>
+		<description>At 5th level you can use your network to deliver or receive items or documents. You can expend a favor to send or request an item or a document to or from one of your contacts. The item can be in posession of a friend or acquaintence that is willing to give you the item, a borrowed book from a library or an item that is for sale in a shop you know about (if you provide the necessary currency). The courier will not steal an item for you or place an incriminating object somewhere for you. The job will take the total distance traveled / 500 + 10 minutes to be completed. You can use this feature a number of times equal to your Charisma modifier (minimum of once), and you regain all expended uses when you finish a long rest.</description>
+		<sheet usage="{{charisma:modifier}}/Long Rest">
+			<description>You can use your network to deliver or receive items or documents. You can expend a favor to send or request an item or a document to or from one of your contacts. The item can be in posession of a friend or acquaintence that is willing to give you the item, a borrowed book from a library or an item that is for sale in a shop you know about (if you provide the necessary currency). The courier will not steal an item for you or place an incriminating object somewhere for you. The job will take the total distance traveled / 500 + 10 minutes to be completed.</description>
+		</sheet>
+	</element>
+	<element name="Gossip" type="Archetype Feature" source="XorpoBrew" id="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYCONNECTIONS_WHISPERNETWORK_GOSSIP">
+		<requirements>!ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYCONNECTIONS_WHISPERNETWORK_GOSSIP</requirements>
+		<description>At 7th level you can use your network to gather rumors, secrets, or news that are relevant to your interests or goals. You can expend a favor to ask the nework for information on a person, place, or thing. The DM determines what kind of information you can get, and how accurate or reliable it is, the favor point is only spent if some information is provided. You can use this feature a number of times equal to your Charisma modifier (minimum of once), and you regain all expended uses when you finish a long rest.</description>
+		<div id="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYCONNECTIONS_WHISPERNETWORK_GOSSIP_PARTOFTHECREW"/>
+		<sheet usage="{{charisma:modifier}}/Long Rest">
+			<description>You can use your network to gather rumors, secrets, or news that are relevant to your interests or goals. You can expend a favor to ask the nework for information on a person, place, or thing. The DM determines what kind of information you can get, and how accurate or reliable it is, the favor point is only spent if some information is provided.</description>
+			<grant type="Archetype Feature" id="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYCONNECTIONS_WHISPERNETWORK_GOSSIP_PARTOFTHECREW" level="7"/>
+		</sheet>
+	</element>
+	<element name="Part of the Crew" type="Archetype Feature" source="XorpoBrew" id="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYCONNECTIONS_WHISPERNETWORK_GOSSIP_PARTOFTHECREW">
+		<requirements>!ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYCONNECTIONS_WHISPERNETWORK_GOSSIP_PARTOFTHECREW</requirements>
+		<description>Also at 7th level you may regain a favor point by trying provide Gossip in the network. If you succeed on a roll of 1d20 + Wisdom modifier + Intelligence modifier against a DC 15, you regain 1 favor. You can do this a number of times equal to your Charisma modifier (minimum of once), and you regain all expended uses when you finish a long rest.</description>
+		<sheet usage="{{charisma:modifier}}/Long Rest">
+			<description>You may regain a favor point by trying provide Gossip in the network. If you succeed on a roll of 1d20 + {{wisdom:modifier}} + {{intelligence:modifier}} against a DC 15, you regain 1 favor. You can do this {{charisma:modifier}} times.</description>
+		</sheet>
+	</element>
+	<element name="Dirty Tricks" type="Archetype Feature" source="XorpoBrew" id="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_DIRTYTRICKS">
+		<requirements>!ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_DIRTYTRICKS</requirements>
+		<description>
+			<p>
+				At 9th level, you have mastered the art of using underhanded tactics to gain an edge in combat. As a bonus action, whenever you use your Sneak Attack, you can choose one of the following effects to apply to the target:
+				<ul>
+					<li>The target must succeed on a Dexterity saving throw or be blinded until the end of your next turn.</li>
+					<li>The target must succeed on an Athletics or Acrobatics check (target’s choice) or be knocked prone.</li>
+					<li>The target must succeed on a Wisdom saving throw or be frightened of you until the end of your next turn.</li>
+				</ul>
+				The DC for these saving throws or checks is equal to 8 + your proficiency bonus + your Charisma modifier.
+			</p>
+		</description>
+		<sheet action="Bonus Action">
+			You have mastered the art of using underhanded tactics to gain an edge in combat. As a bonus action, whenever you use your Sneak Attack, you can choose one of the following effects to apply to the target:
+			<ul>
+				<li>The target must succeed on a Dexterity saving throw or be blinded until the end of your next turn.</li>
+				<li>The target must succeed on an Athletics or Acrobatics check (target’s choice) or be knocked prone.</li>
+				<li>The target must succeed on a Wisdom saving throw or be frightened of you until the end of your next turn.</li>
+			</ul>
+			The DC for these saving throws or checks is {{8 + proficiency + charisma:modifier}}.
+		</sheet>
+	</element>
+	<element name="Shady Business" type="Archetype Feature" source="XorpoBrew" id="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYBUSINESS">
+		<requirements>!ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYBUSINESS</requirements>
+		<description>
+			<p>At 13th level, you have learned how to use your network and your skills to gain an advantage in any deal or transaction. Whenever you buy, sell, or trade an item or a service, you can expend a favor to get a better price or a better quality, or get a service that is normally unavailable or impossible. The DM determines how much you can save or earn, or how much you can improve or worsen the item or service, and even how many favors you need call in to get something. You can also use this feature to create or forge documents, such as contracts, passports, or licenses, that are convincing and hard to detect. You can use favors to improve the quality of the documents. You can use this feature a number of times equal to your Charisma modifier (minimum of once), and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet usage="{{charisma:modifier}}/Long Rest">
+			<description>You have learned how to use your network and your skills to gain an advantage in any deal or transaction. Whenever you buy, sell, or trade an item or a service, you can expend a favor to get a better price or a better quality, or get a service that is normally unavailable or impossible. The DM determines how much you can save or earn, or how much you can improve or worsen the item or service, and even how many favors you need call in to get something. You can also use this feature to create or forge documents, such as contracts, passports, or licenses, that are convincing and hard to detect.</description>
+		</sheet>
+	</element>
+	<element name="Powerbroker" type="Archetype Feature" source="XorpoBrew" id="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_POWEBROKER">
+		<requirements>!ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_POWEBROKER</requirements>
+		<description>
+			<p>
+				At 17th level you have become a legend in the underworld, and you can use your network and your favors to achieve almost anything. You can expend all of your remaining favors (to a maximum of 6) to activate one of the following effects:
+				<ul>
+					<li>You can summon one of your most loyal and skilled agents, such as an assassin, or a saboteur, and command them to perform a task for you. The agent will follow your instructions to the best of their ability, and will not stop until the task is completed or they are killed.</li>
+					<li>You can access one of your most secret and valuable resources, such as a hidden vault, a black site, or a prototype weapon, and use it for your benefit. The DM determines what kind of resource you can access, and how long you can use it. You have to be blindfolded when you are taken to the resource, and you can’t go back to it without using this feature again.</li>
+					After using this feature you must wait 7 days to use it again, and you have to wait until the previous effect ends. Using this feature may also have some drawbacks or risks, such as attracting unwanted attention, angering powerful enemies, or owing a huge debt. The DM has the final say on what kind of drawbacks or risks you face from using this feature.
+				</ul>
+			</p>
+		</description>
+		<sheet>
+			<description>
+				You can expend all of your remaining favors (to a maximum of 6) to activate one of the following effects:
+				<ul>
+					<li>You can summon one of your most loyal and skilled agents, such as an assassin, or a saboteur, and command them to perform a task for you. The agent will follow your instructions to the best of their ability, and will not stop until the task is completed or they are killed.</li>
+					<li>You can access one of your most secret and valuable resources, such as a hidden vault, a black site, or a prototype weapon, and use it for your benefit. The DM determines what kind of resource you can access, and how long you can use it. You have to be blindfolded when you are taken to the resource, and you can’t go back to it without using this feature again.</li>
+					After using this feature you must wait 7 days to use it again, and you have to wait until the previous effect ends. Using this feature may also have some drawbacks or risks, such as attracting unwanted attention, angering powerful enemies, or owing a huge debt. The DM has the final say on what kind of drawbacks or risks you face from using this feature.
+				</ul>
+			</description>
+		</sheet>
+	</element>
+	
+	<!--Feature Replacement Grants-->
+	<element name="Shady Connections Feature Replacement" type="Grants" source="Internal" id="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYCONNECTIONS" />
+	<element name="Dirty Tricks Feature Replacement" type="Grants" source="Internal" id="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_DIRTYTRICKS" />
+	<element name="Shady Business Feature Replacement" type="Grants" source="Internal" id="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_SHADYBUSINESS" />
+	<element name="Power Broker Feature Replacement" type="Grants" source="Internal" id="ID_XPB_CONNECTED_ARCHETYPE_FEATURE_CONNECTED_POWERBROKER" />
+</elements>
