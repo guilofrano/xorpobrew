@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.1.2">
+			<file name="class-alchemist.xml" url="https://raw.githubusercontent.com/guilofrano/xorpobrew/main/classes/class-alchemist.xml" />
+		</update>
+	</info>
+
+	<element name="Alchemist" type="Class" source="XorpoBrew" id="ID_XPB_CLASS_ALCHEMIST">
+		<description>
+			<p>The Alchemist.</p>
+			<p class="indent">Alchemists make alchemy. They make potions, ointments and powders.</p>
+			<h4>ALCHEMY</h4>
+			<p>Yep. Like chemistry, but less sciency.</p>
+			<h4>CREATING AN ALCHEMIST</h4>
+			<p>TBD.</p>
+			<h5>QUICK BUILD</h5>
+			<p>Int, then  Dex.</p>
+			<h2>CLASS FEATURES</h2>
+			<p>As an Alchemist, you gain the following class features.</p>
+			<h5>HIT POINTS</h5>
+			<ul class="unstyled">
+				<li><strong>Hit Dice:</strong> 1d10 per alchemist level</li>
+				<li><strong>Hit Points at 1st Level:</strong> 10 + your Constitution modifier</li>
+				<li><strong>Hit Points at Higher Levels:</strong> 1d10 (or 6) + your Constitution modifier per artificer level after 1st</li>
+			</ul>
+			<h5>PROFICIENCIES</h5>
+			<ul class="unstyled">
+				<li><strong>Armor:</strong> Light armor, medium armor, shields</li>
+				<li><strong>Weapons:</strong> Simple weapons</li>
+				<li><strong>Tools:</strong> Alchemist's Supplies, and your choice between Brewer’s Supplies and Cook’s utensils</li>
+			</ul>
+			<ul class="unstyled">
+				<li><strong>Saving Throws:</strong> Intelligence, Dexterity</li>
+				<li><strong>Skills:</strong> Choose three from Animal Handling, Arcana, History, Investigation, Medicine, Nature, Perception</li>
+			</ul>
+			<h5>EQUIPMENT</h5>
+			<p>You start with the following equipment, in addition to the equipment granted by your background:</p>
+			<ul>
+				<li>any two simple weapons of your choice</li>
+				<li>a dagger</li>
+				<li>your choice of studded leather armor or scale mail</li>
+				<li>alchemist's supplies and an explorer's pack</li>
+			</ul>
+			<p class="indent">If you forgo this starting equipment, as well as the items offered by your background, you start with 5d4 x 10 gp to buy your equipment.</p>
+			<h5 class="caption">THE ALCHEMIST</h5>
+			<table class="class-features">
+				<thead>
+					<tr><td class="col-5">Level</td><td class="col-85 left">Features</td><td>Readied Concoctions</td><td>Enchanted Concoctions</td>
+				</thead>
+				<tr><td> 1st</td><td class="left">Transmute, Vial Bargain</td><td>4</td><td>—</td></tr>
+				<tr><td> 2nd</td><td class="left">Enchant Concoction, Gather</td><td>4</td><td>1</td></tr>
+				<tr><td> 3rd</td><td class="left">Alchemical Path</td><td>3</td><td>1</td></tr>
+			</table>
+			<div element="ID_XPB_CLASS_FEATURE_ALCHEMIST_VIAL_BARGAIN" />
+			<div element="ID_XPB_CLASS_FEATURE_ALCHEMIST_TRANSMUTE" />
+			<div element="ID_XPB_CLASS_FEATURE_ALCHEMIST_TRANSMUTE_DISSECT" />
+			<div element="ID_XPB_CLASS_FEATURE_ALCHEMIST_TRANSMUTE_CONCOT" />
+			<div element="ID_XPB_CLASS_FEATURE_ALCHEMIST_GATHER" />
+			<div element="ID_XPB_CLASS_FEATURE_ALCHEMIST_ENCHANT_CONCOTION" />
+			<div element="ID_XPB_CLASS_FEATURE_ALCHEMIST_ALCHEMICAL_PATH" />
+			<div element="ID_XPB_CLASS_FEATURE_ALCHEMIST_ABILITY_SCORE_IMPROVEMENT" />
+			<div element="ID_XPB_CLASS_FEATURE_ALCHEMIST_FLASH_OF_GENIUS" />
+			<div element="ID_XPB_CLASS_FEATURE_ALCHEMIST_MAGIC_ITEM_ADEPT" />
+			<div element="ID_XPB_CLASS_FEATURE_ALCHEMIST_SPELL_STORING_ITEM" />
+			<div element="ID_XPB_CLASS_FEATURE_ALCHEMIST_MAGIC_ITEM_SAVANT" />
+			<div element="ID_XPB_CLASS_FEATURE_ALCHEMIST_MAGIC_ITEM_MASTER" />
+			<div element="ID_XPB_CLASS_FEATURE_ALCHEMIST_SOUL_OF_ARTIFICE" />
+		</description>
+		<setters>
+			<set name="short">Alchemists are ever studiers of the natural world and how it interacts with itself.</set>
+			<set name="hd">d10</set>
+		</setters>
+		<sheet display="false" />
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_ALCHEMISTS_SUPPLIES" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT" />
+			<select type="Proficiency" name="Artisan Tool, Alchemist" supports="ID_PROFICIENCY_TOOL_PROFICIENCY_BREWERS_SUPPLIES|ID_PROFICIENCY_TOOL_PROFICIENCY_COOKS_UTENSILS" />
+
+			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_DEXTERITY"/>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_INTELLIGENCE"/>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_WISDOM"/>
+			<select type="Proficiency" name="Skill Proficiency, Alchemist" supports="ID_PROFICIENCY_SKILL_ANIMAL_HANDLING|ID_PROFICIENCY_SKILL_ARCANA|ID_PROFICIENCY_SKILL_HISTORY|ID_PROFICIENCY_SKILL_INVESTIGATION|ID_PROFICIENCY_SKILL_MEDICINE|ID_PROFICIENCY_SKILL_NATURE|ID_PROFICIENCY_SKILL_PERCEPTION" number="3" />
+
+			<grant type="Class Feature" id="ID_XPB_CLASS_FEATURE_ALCHEMIST_TRANSMUTE" level="1"/>
+			<grant type="Class Feature" id="ID_XPB_CLASS_FEATURE_ALCHEMIST_VIAL_BARGAIN" level="1"/>
+			<grant type="Class Feature" id="ID_XPB_CLASS_FEATURE_ALCHEMIST_GATHER" level="2"/>
+			<grant type="Class Feature" id="ID_XPB_CLASS_FEATURE_ALCHEMIST_ENCHANT_CONCOTION" level="2"/>
+			<grant type="Class Feature" id="ID_XPB_CLASS_FEATURE_ALCHEMIST_ALCHEMICAL_PATH" level="3"/>
+			<grant type="Class Feature" id="ID_XPB_CLASS_FEATURE_ALCHEMIST_ABILITY_SCORE_IMPROVEMENT" level="4"/>
+			<grant type="Class Feature" id="ID_XPB_CLASS_FEATURE_ALCHEMIST_TOOL_EXPERTISE" level="5"/>
+			<grant type="Class Feature" id="ID_XPB_CLASS_FEATURE_ALCHEMIST_REUSE" level="7"/>
+			<grant type="Class Feature" id="ID_XPB_CLASS_FEATURE_ALCHEMIST_RECYCLE" level="10"/>
+			<grant type="Class Feature" id="ID_XPB_CLASS_FEATURE_ALCHEMIST_INGREDIENT_ECONOMY" level="14"/>
+			<grant type="Class Feature" id="ID_XPB_CLASS_FEATURE_ALCHEMIST_DISTILL" level="18"/>
+			<grant type="Class Feature" id="ID_XPB_CLASS_FEATURE_ALCHEMIST_ALCHEMICAL_BLOOD" level="20"/>
+
+			
+		</rules>
+		<!-- <multiclass id="ID_XPB_MULTICLASS_ALCHEMIST">
+			<prerequisite>Intelligence 13</prerequisite>
+			<requirements>[int:13],!(ID_WOTC_UA_CLASS_ALCHEMIST||ID_WOTC_UA_MULTICLASS_ALCHEMIST||ID_WOTC_UA20190228_CLASS_ALCHEMIST||ID_WOTC_UA20190228_MULTICLASS_ALCHEMIST||ID_WOTC_ERLW_CLASS_ALCHEMIST||ID_WOTC_ERLW_MULTICLASS_ALCHEMIST)</requirements>
+			<setters>
+				<set name="multiclass proficiencies">light armor, medium armor, shields, thieves’ tools, tinker’s tools.</set>
+			</setters>
+			<rules>
+				<grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS" />
+			</rules>
+		</multiclass> -->
+	</element>
+	<element name="Spellcasting" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_XPB_CLASS_FEATURE_ALCHEMIST_SPELLCASTING">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_SPELLCASTING</requirements>
+		<description>
+			<p><em>1st-level artificer feature</em></p>
+			<p>You've studied the workings of magic and how to cast spells, channeling the magic through objects. To observers, you don't appear to be casting spells in a conventional way; you appear to produce wonders from mundane items and outlandish inventions.</p>
+			<h5>TOOLS REQUIRED</h5>
+			<p>You produce your artificer spell effects through your tools. You must have a spellcasting focus—specifically thieves’ tools or some kind of artisan’s tool—in hand when you cast any spell with this Spellcasting feature (meaning the spell has an ‘M’ component when you cast it). You must be proficient with the tool to use it in this way. See chapter 5, "Equipment," in the <i>Player’s Handbook</i> for descriptions of these tools.</p>
+			<p class="indent">After you gain the Infuse Item feature at 2nd level, you can also use any item bearing one of your infusions as a spellcasting focus.</p>
+			<h5>CANTRIPS (0-LEVEL SPELLS)</h5>
+			<p>You know two cantrips of your choice from the artificer spell list. At higher levels, you learn additional artificer cantrips of your choice, as shown in the Cantrips Known column of the Alchemist table.</p>
+			<p class="indent">When you gain a level in this class, you can replace one of the artificer cantrips you know with another cantrip from the artificer spell list.</p>
+			<h5>PREPARING AND CASTING SPELLS</h5>
+			<p>The Alchemist table shows how many spell slots you have to cast your artificer spells. To cast one of your artificer spells of 1st level or higher, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest.</p>
+			<p class="indent">You prepare the list of artificer spells that are available for you to cast, choosing from the artificer spell list. When you do so, choose a number of artificer spells equal to your Intelligence modifier + half your artificer level, rounded down (minimum of one spell). The spells must be of a level for which you have spell slots.</p>
+			<p class="indent">For example, if you are a 5th-level artificer, you have four 1st-level and two 2nd-level spell slots. With an Intelligence of 14, your list of prepared spells can include four spells of 1st or 2nd level, in any combination. If you prepare the 1st-level spell cure wounds, you can cast it using a 1st-level or a 2nd-level slot. Casting the spell doesn’t remove it from your list of prepared spells.</p>
+			<p class="indent">You can change your list of prepared spells when you finish a long rest. Preparing a new list of artificer spells requires time spent tinkering with your spellcasting focuses: at least 1 minute per spell level for each spell on your list.</p>
+			<h5>SPELLCASTING ABILITY</h5>
+			<p>Intelligence is your spellcasting ability for your artificer spells; your understanding of the theory behind magic allows you to wield these spells with superior skill. You use your Intelligence whenever an artificer spell refers to your spellcasting ability. In addition, you use your Intelligence modifier when setting the saving throw DC for an artificer spell you cast and when making an attack roll with one.</p>
+			<center>
+				<p><strong>Spell save DC</strong> = 8 + your proficiency bonus + your Intelligence modifier</p>
+				<p><strong>Spell attack modifier</strong> = your proficiency bonus + your Intelligence modifier</p>
+			</center>
+			<h5>RITUAL CASTING</h5>
+			<p>You can cast an artificer spell as a ritual if that spell has the ritual tag and you have the spell prepared.</p>
+		</description>
+		<sheet display="false">
+			<description>You produce your artificer spell effects through your tools. You must have a spellcasting focus—specifically thieves’ tools or some kind of artisan’s tool—in hand when you cast any spell. &#13;
+			You can also use any item bearing one of your infusions as a spellcasting focus.</description>
+		</sheet>
+		<spellcasting name="Alchemist" ability="Intelligence" prepare="true">
+			<list known="true">Alchemist</list>
+		</spellcasting>
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_HALF_UP" requirements="ID_INTERNAL_GRANT_MULTICLASS"/>
+			<!-- <grant type="Grants" id="ID_INTERNAL_GRANTS_RITUAL_CASTER" /> -->
+			<stat name="artificer:spellcasting:slots:1" value="2" level="1" />
+			<stat name="artificer:spellcasting:slots:1" value="1" level="3" />
+			<stat name="artificer:spellcasting:slots:1" value="1" level="5" />
+			<stat name="artificer:spellcasting:slots:2" value="2" level="5" />
+			<stat name="artificer:spellcasting:slots:2" value="1" level="7" />
+			<stat name="artificer:spellcasting:slots:3" value="2" level="9" />
+			<stat name="artificer:spellcasting:slots:3" value="1" level="11" />
+			<stat name="artificer:spellcasting:slots:4" value="1" level="13" />
+			<stat name="artificer:spellcasting:slots:4" value="1" level="15" />
+			<stat name="artificer:spellcasting:slots:4" value="1" level="17" />
+			<stat name="artificer:spellcasting:slots:5" value="1" level="17" />
+			<stat name="artificer:spellcasting:slots:5" value="1" level="19" />
+			<stat name="artificer:spellcasting:prepare" value="intelligence:modifier" />
+			<stat name="artificer:spellcasting:prepare" value="level:artificer:half" />
+			<select type="Spell" name="Cantrip, Alchemist" supports="$(spellcasting:list), 0" number="2" spellcasting="Alchemist" />
+			<select type="Spell" name="Cantrip, Alchemist" supports="$(spellcasting:list), 0" number="1" spellcasting="Alchemist" level="10" />
+			<select type="Spell" name="Cantrip, Alchemist" supports="$(spellcasting:list), 0" number="1" spellcasting="Alchemist" level="14" />
+		</rules>
+	</element>
+
+	<element name="Transmute" type="Class Feature" source="XorpoBrew" id="ID_XPB_CLASS_FEATURE_ALCHEMIST_TRANSMUTE">
+		<description>
+			<p>You get to transmute stuff. It's pretty cool.</p>
+		</description>
+		<sheet>
+			You get to transmute stuff. It's pretty cool.
+		</sheet>
+		<rules>
+		</rules>
+	</element>
+
+	<element name="Vial Bargain" type="Class Feature" source="XorpoBrew" id="ID_XPB_CLASS_FEATURE_ALCHEMIST_VIAL_BARGAIN">
+		<description>
+		</description>
+		<sheet>
+		</sheet>
+		<rules>
+		</rules>
+	</element>
+
+
+	<!--Feature Replacement Grants-->
+	<element name="Magical Tinkering Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_MAGICAL_TINKERING" />
+	<element name="Spellcasting Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_SPELLCASTING" />
+	<element name="Infuse Item Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_INFUSE_ITEM" />
+	<element name="Alchemist Specialist Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_ARTIFICER_SPECIALIST" />
+	<element name="The Right Tool for the Job Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_THE_RIGHT_TOOL_FOR_THE_JOB" />
+	<element name="Ability Score Improvement Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_ABILITY_SCORE_IMPROVEMENT" />
+	<element name="Tool Expertise Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_TOOL_EXPERTISE" />
+	<element name="Flash of Genius Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_FLASH_OF_GENIUS" />
+	<element name="Magic Item Adept Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_MAGIC_ITEM_ADEPT" />
+	<element name="Spell-Storing Item Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_SPELL_STORING_ITEM" />
+	<element name="Magic Item Savant Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_MAGIC_ITEM_SAVANT" />
+	<element name="Magic Item Master Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_MAGIC_ITEM_MASTER" />
+	<element name="Soul of Artifice Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_SOUL_OF_ARTIFICE" />
+
+
+	<!-- v1.19.3XX workaround -->
+	<element name="Ability Score Improvement" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_XPB_CLASS_FEATURE_ABILITY_4">
+		<compendium display="false" />
+		<supports>Improvement Option, Eberron Alchemist, 4</supports>
+		<requirements>ID_XPB_CLASS_FEATURE_ALCHEMIST_ABILITY_SCORE_IMPROVEMENT</requirements>
+		<description>
+			<p>You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Level 4)" supports="Ability Score Improvement,Class" number="2" />
+		</rules>
+	</element>
+	<element name="Feat" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_XPB_CLASS_FEATURE_FEAT_4">
+		<compendium display="false" />
+		<supports>Improvement Option, Eberron Alchemist, 4</supports>
+		<requirements>ID_XPB_CLASS_FEATURE_ALCHEMIST_ABILITY_SCORE_IMPROVEMENT,ID_INTERNAL_OPTION_ALLOW_FEATS</requirements>
+		<description>
+			<p>Select a feat of your choice.</p>
+		</description>
+		<sheet display="false" />
+		<setters>
+			<set name="allow duplicate">true</set>
+		</setters>
+		<rules>
+			<select name="Feat (Level 4)" type="Feat" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_XPB_CLASS_FEATURE_ABILITY_8">
+		<compendium display="false" />
+		<supports>Improvement Option, Eberron Alchemist, 8</supports>
+		<requirements>ID_XPB_CLASS_FEATURE_ALCHEMIST_ABILITY_SCORE_IMPROVEMENT</requirements>
+		<description>
+			<p>You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Level 8)" supports="Ability Score Improvement,Class" number="2" />
+		</rules>
+	</element>
+	<element name="Feat" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_XPB_CLASS_FEATURE_FEAT_8">
+		<compendium display="false" />
+		<supports>Improvement Option, Eberron Alchemist, 8</supports>
+		<requirements>ID_XPB_CLASS_FEATURE_ALCHEMIST_ABILITY_SCORE_IMPROVEMENT,ID_INTERNAL_OPTION_ALLOW_FEATS</requirements>
+		<description>
+			<p>Select a feat of your choice.</p>
+		</description>
+		<sheet display="false" />
+		<setters>
+			<set name="allow duplicate">true</set>
+		</setters>
+		<rules>
+			<select name="Feat (Level 8)" type="Feat" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_XPB_CLASS_FEATURE_ABILITY_12">
+		<compendium display="false" />
+		<supports>Improvement Option, Eberron Alchemist, 12</supports>
+		<requirements>ID_XPB_CLASS_FEATURE_ALCHEMIST_ABILITY_SCORE_IMPROVEMENT</requirements>
+		<description>
+			<p>You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Level 12)" supports="Ability Score Improvement,Class" number="2" />
+		</rules>
+	</element>
+	<element name="Feat" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_XPB_CLASS_FEATURE_FEAT_12">
+		<compendium display="false" />
+		<supports>Improvement Option, Eberron Alchemist, 12</supports>
+		<requirements>ID_XPB_CLASS_FEATURE_ALCHEMIST_ABILITY_SCORE_IMPROVEMENT,ID_INTERNAL_OPTION_ALLOW_FEATS</requirements>
+		<description>
+			<p>Select a feat of your choice.</p>
+		</description>
+		<sheet display="false" />
+		<setters>
+			<set name="allow duplicate">true</set>
+		</setters>
+		<rules>
+			<select name="Feat (Level 12)" type="Feat" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_XPB_CLASS_FEATURE_ABILITY_16">
+		<compendium display="false" />
+		<supports>Improvement Option, Eberron Alchemist, 16</supports>
+		<requirements>ID_XPB_CLASS_FEATURE_ALCHEMIST_ABILITY_SCORE_IMPROVEMENT</requirements>
+		<description>
+			<p>You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Level 16)" supports="Ability Score Improvement,Class" number="2" />
+		</rules>
+	</element>
+	<element name="Feat" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_XPB_CLASS_FEATURE_FEAT_16">
+		<compendium display="false" />
+		<supports>Improvement Option, Eberron Alchemist, 16</supports>
+		<requirements>ID_XPB_CLASS_FEATURE_ALCHEMIST_ABILITY_SCORE_IMPROVEMENT,ID_INTERNAL_OPTION_ALLOW_FEATS</requirements>
+		<description>
+			<p>Select a feat of your choice.</p>
+		</description>
+		<sheet display="false" />
+		<setters>
+			<set name="allow duplicate">true</set>
+		</setters>
+		<rules>
+			<select name="Feat (Level 16)" type="Feat" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_XPB_CLASS_FEATURE_ABILITY_19">
+		<compendium display="false" />
+		<supports>Improvement Option, Eberron Alchemist, 19</supports>
+		<requirements>ID_XPB_CLASS_FEATURE_ALCHEMIST_ABILITY_SCORE_IMPROVEMENT</requirements>
+		<description>
+			<p>You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Level 19)" supports="Ability Score Improvement,Class" number="2" />
+		</rules>
+	</element>
+	<element name="Feat" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_XPB_CLASS_FEATURE_FEAT_19">
+		<compendium display="false" />
+		<supports>Improvement Option, Eberron Alchemist, 19</supports>
+		<requirements>ID_XPB_CLASS_FEATURE_ALCHEMIST_ABILITY_SCORE_IMPROVEMENT,ID_INTERNAL_OPTION_ALLOW_FEATS</requirements>
+		<description>
+			<p>Select a feat of your choice.</p>
+		</description>
+		<sheet display="false" />
+		<setters>
+			<set name="allow duplicate">true</set>
+		</setters>
+		<rules>
+			<select name="Feat (Level 19)" type="Feat" />
+		</rules>
+	</element>
+</elements>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>XorpoBrew</name>
+		<update version="0.1.2">
+			<file name="magic-weapons.xml" url="https://raw.githubusercontent.com/guilofrano/xorpobrew/main/items/magic-weapons.xml" />
+		</update>
+	</info>
+
+	<element name="Spear of Destiny" type="Magic Item" source="XorpoBrew" id="ID_XPB_MAGIC_ITEM_SPEAR_OF_DESTINY">
+		<description>
+			<p>This holy weapon grants a +1 bonus to attack and damage rolls made with it. When you utter it's command word it starts shedding a dim light in a 10 foot radius. Any fiends or undead creatures that start their turn in this area take 1d6 radiant damage. Additionally, you deal 1d8 radiant damage on every attack and another 1d8 for attacks against undeads and fiends.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type" addition="any reach weapon">Weapon</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement" addition="by a Paladin">true</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_PROPERTY_REACH</set>
+			<set name="name-format">{{parent}} of Destiny</set>
+		</setters>
+	</element>
+</elements>

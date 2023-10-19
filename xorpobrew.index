@@ -4,7 +4,7 @@
 		<name>XorpoBrew</name>
 		<description>All content from XorpoBrew</description>
 		<author url="https://github.com/guilofrano/">GLC</author>
-		<update version="0.1.1">
+		<update version="0.1.2">
 			<file name="xorpobrew.index" url="https://raw.githubusercontent.com/guilofrano/xorpobrew/main/xorpobrew.index" />
 		</update>
 	</info>
@@ -15,9 +15,11 @@
 		<!-- <file name="race-gragoyle.xml" url="https://raw.githubusercontent.com/guilofrano/xorpobrew/main/races/race-gargoyle.xml" /> -->
 
 		<!-- classes -->
-		<!-- <file name="class-alchemist.xml" url="https://raw.githubusercontent.com/guilofrano/xorpobrew/main/core/players-handbook/classes/class-barbarian.xml" /> -->
+		<!-- <file name="class-alchemist.xml" url="https://raw.githubusercontent.com/guilofrano/xorpobrew/main/classes/class-alchemist.xml" /> -->
+
+		<!-- items -->
+		<file name="magic-weapons.xml" url="https://raw.githubusercontent.com/guilofrano/xorpobrew/main/items/magic-weapons.xml" />
 
 		<!-- archetypes -->
-		<file name="rogue-connected.xml" url="https://raw.githubusercontent.com/guilofrano/xorpobrew/main/archetypes/rogue-connected.xml" />
 	</files>
 </index>
