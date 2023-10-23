@@ -1,6 +1,6 @@
 <elements>
 	<info>
-		<update version="0.1.5">
+		<update version="0.1.6">
 			<file name="class-weapon-warrior.xml" url="https://raw.githubusercontent.com/guilofrano/xorpobrew/main/classes/class-weapon-warrior.xml" />
 		</update>
 	</info>
@@ -116,7 +116,7 @@
 		</rules>
 	</element>
 
-	<element name="Weapon Type" type="Class Feature" source="XorpoBrew" id="ID_XPB_CLASS_FEATURE_WEAPON_SPIRIT_POSESSION">
+	<element name="Weapon Spirit Posession" type="Class Feature" source="XorpoBrew" id="ID_XPB_CLASS_FEATURE_WEAPON_SPIRIT_POSESSION">
 		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WEAPON_WARRIOR_POSESSION</requirements>
 		<description>
 			<p>Spirit Posession flavor text.</p>
@@ -128,7 +128,7 @@
 		</sheet>
 	</element>
 
-	<element name="Weapon Type" type="Class Feature" source="XorpoBrew" id="ID_XPB_CLASS_FEATURE_AWAKENED_WEAPON">
+	<element name="Awakened Weapon" type="Class Feature" source="XorpoBrew" id="ID_XPB_CLASS_FEATURE_AWAKENED_WEAPON">
 		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WEAPON_WARRIOR_AWAKENED_WEAPON</requirements>
 		<description>
 			<p>Awakened Weapon flavor text.</p>
@@ -156,18 +156,15 @@
 		</rules>
 	</element>
 
-	<element name="Weapon Type" type="Class Feature" source="XorpoBrew" id="ID_XPB_CLASS_FEATURE_ROOTED_POSESSION">
+	<element name="Rooted Posession" type="Class Feature" source="XorpoBrew" id="ID_XPB_CLASS_FEATURE_ROOTED_POSESSION">
 		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WEAPON_WARRIOR_ROOTED_POSESSION</requirements>
 		<description>
 			<p>Rooted Posession flavor text.</p>
 		</description>
-		<rules>
-			<select type="Class Feature" name="Weapon Type" supports="Weapon Type, Weapon Warrior" level="1"/>
-		</rules>
 	</element>
 
 	<!-- Weapon Types -->
-	<element name="Striker" type="Weapon Type" source="XorpoBrew" id="ID_XPB_CLASS_FEATURE_WEAPON_TYPE_STRIKER">
+	<element name="Striker" type="Class Feature" source="XorpoBrew" id="ID_XPB_CLASS_FEATURE_WEAPON_TYPE_STRIKER">
 		<supports>Weapon Type, Weapon Warrior</supports>
 		<description>
 			<p>You like hitting things.</p>
@@ -179,7 +176,7 @@
 			<list known="true">Weapon Warrior</list>
 		</spellcasting>
 		<rules>
-			<select type="Proficiency" name="Weapon Form" supports="ID_PROFICIENCY_WEAPON_PROFICIENCY_DAGGER|ID_PROFICIENCY_WEAPON_PROFICIENCY_LONGSWORD|ID_PROFICIENCY_WEAPON_PROFICIENCY_RAPIER|ID_PROFICIENCY_WEAPON_PROFICIENCY_SHORTSWORD|ID_PROFICIENCY_WEAPON_PROFICIENCY_SCIMITAR|ID_PROFICIENCY_WEAPON_PROFICIENCY_GREATSWORD|ID_PROFICIENCY_WEAPON_PROFICIENCY_CLUB|ID_PROFICIENCY_WEAPON_PROFICIENCY_LIGHT_HAMMER|ID_PROFICIENCY_WEAPON_PROFICIENCY_MACE|ID_PROFICIENCY_WEAPON_PROFICIENCY_QUARTERSTAFF|ID_PROFICIENCY_WEAPON_PROFICIENCY_MORNINGSTAR|ID_PROFICIENCY_WEAPON_PROFICIENCY_FLAIL|ID_PROFICIENCY_WEAPON_PROFICIENCY_GREATCLUB|ID_PROFICIENCY_WEAPON_PROFICIENCY_WARHAMMER|ID_PROFICIENCY_WEAPON_PROFICIENCY_MAUL|ID_PROFICIENCY_WEAPON_PROFICIENCY_HANDAXE|ID_PROFICIENCY_WEAPON_PROFICIENCY_BATTLEAXE|ID_PROFICIENCY_WEAPON_PROFICIENCY_GREATAXE|ID_PROFICIENCY_WEAPON_PROFICIENCY_WHIP|ID_PROFICIENCY_WEAPON_PROFICIENCY_PIKE|ID_PROFICIENCY_WEAPON_PROFICIENCY_HALBERD|ID_PROFICIENCY_WEAPON_PROFICIENCY_GLAIVE|ID_PROFICIENCY_WEAPON_PROFICIENCY_LANCE" number="1"/>
+			<select type="Proficiency" name="Weapon Form" supports="ID_PROFICIENCY_WEAPON_PROFICIENCY_DAGGER|ID_PROFICIENCY_WEAPON_PROFICIENCY_LONGSWORD|ID_PROFICIENCY_WEAPON_PROFICIENCY_RAPIER|ID_PROFICIENCY_WEAPON_PROFICIENCY_SHORTSWORD|ID_PROFICIENCY_WEAPON_PROFICIENCY_SCIMITAR|ID_PROFICIENCY_WEAPON_PROFICIENCY_GREATSWORD"/>
 
 			<stat name="weapon warrior:spellcasting:slots:1" value="2" level="2" />
 			<stat name="weapon warrior:spellcasting:slots:1" value="1" level="3" />
