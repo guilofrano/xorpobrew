@@ -1,0 +1,132 @@
+<elements>
+	<info>
+		<update version="0.1.4">
+			<file name="class-weapon-warrior.xml" url="https://raw.githubusercontent.com/guilofrano/xorpobrew/main/classes/class-weapon-warrior.xml" />
+		</update>
+	</info>
+
+	<element name="Weapon Warrior" type="Class" source="XorpoBrew" id="ID_XPB_CLASS_WEAPON_WARRIOR">
+		<description>
+			<p>Flavor text.</p>
+			<h4>CREATING A WEAPON WARRIOR</h4>
+			<p>Flavor text.</p>
+			<h5>QUICK BUILD</h5>
+			<p>Flavor text.</p>
+			<h2>CLASS FEATURES</h2>
+			<p>As a Weapon Warrior, you gain the following class features.</p>
+			<h5>HIT POINTS</h5>
+			<ul class="unstyled">
+				<li><strong>Hit Dice:</strong> 1d8 per weapon warrior level</li>
+				<li><strong>Hit Points at 1st Level:</strong> 8 + your Constitution modifier</li>
+				<li><strong>Hit Points at Higher Levels:</strong> 1d8 (or 5) + your Constitution modifier per weapon warrior level after 1st</li>
+			</ul>
+			<h5>PROFICIENCIES</h5>
+			<ul class="unstyled">
+				<li><strong>Armor:</strong> Light armor, medium armor</li>
+				<li><strong>Weapons:</strong> You are proficient only with your posessor weapon</li>
+				<li><strong>Tools:</strong> None</li>
+			</ul>
+			<ul class="unstyled">
+				<li><strong>Saving Throws:</strong> Constitution, Wisdom</li>
+				<li><strong>Skills:</strong> Choose two from Arcana, History, Insight, Nature, Perception, Survival</li>
+			</ul>
+			<h5>EQUIPMENT</h5>
+			<p>You start with the following equipment, in addition to the equipment granted by your background:</p>
+			<ul>
+				<li>your posessor weapon</li>
+				<li>your choice of studded leather armor or scale mail</li>
+				<li>a shield</li>
+				<li>explorer's pack or dungeoneer’s pack</li>
+			</ul>
+			<p class="indent">If you forgo this starting equipment, as well as the items offered by your background, you start with 5d4 x 10 gp to buy your equipment.</p>
+			<h5 class="caption">THE WEAPON WARRIOR</h5>
+			<table class="class-features">
+				<thead>
+					<tr><td class="col-5">Level</td><td class="left">Features</td></tr>
+				</thead>
+				<tr><td> 1st</td><td class="left">Weapon Type, Weapon Spirit Posession</td></tr>
+				<tr><td> 2nd</td><td class="left">-</td></tr>
+				<tr><td> 3rd</td><td class="left">Awakened Weapon, Awakened Weapon</td></tr>
+				<tr><td> 4th</td><td class="left">Ability Score Improvement</td></tr>
+				<tr><td> 5th</td><td class="left">-</td></tr>
+				<tr><td> 6th</td><td class="left">-</td></tr>
+				<tr><td> 7th</td><td class="left">Awakened Weapon feature</td></tr>
+				<tr><td> 8th</td><td class="left">Ability Score Improvement</td></tr>
+				<tr><td> 9th</td><td class="left">-</td></tr>
+				<tr><td>10th</td><td class="left">Rooted Posession</td></tr>
+				<tr><td>11th</td><td class="left">Awakened Weapon feature</td></tr>
+				<tr><td>12th</td><td class="left">Ability Score Improvement</td></tr>
+				<tr><td>13th</td><td class="left">-</td></tr>
+				<tr><td>14th</td><td class="left">-</td></tr>
+				<tr><td>15th</td><td class="left">-</td></tr>
+				<tr><td>16th</td><td class="left">Ability Score Improvement</td></tr>
+				<tr><td>17th</td><td class="left">Awakened Weapon feature</td></tr>
+				<tr><td>18th</td><td class="left">-</td></tr>
+				<tr><td>19th</td><td class="left">Ability Score Improvement</td></tr>
+				<tr><td>20th</td><td class="left">-</td></tr>
+			</table>
+			<div element="ID_XPB_CLASS_FEATURE_WEAPON_TYPE" />
+			<div element="ID_XPB_CLASS_FEATURE_WEAPON_SPIRIT_POSESSION" />
+			<div element="ID_XPB_CLASS_FEATURE_AWAKENED_WEAPON" />
+			<div element="ID_XPB_CLASS_FEATURE_ROOTED_POSESSION" />
+		</description>
+		<setters>
+			<set name="short">Flavor short text.</set>
+			<set name="hd">d8</set>
+		</setters>
+		<sheet display="false" />
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+
+			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_CONSTITUTION" requirements="!ID_XPB_MULTICLASS_WEAPON_WARRIOR" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_WISDOM" requirements="!ID_XPB_MULTICLASS_WEAPON_WARRIOR" />
+			<select type="Proficiency" name="Skill Proficiency, Artificer" supports="ID_PROFICIENCY_SKILL_ARCANA|ID_PROFICIENCY_SKILL_HISTORY|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_NATURE|ID_PROFICIENCY_SKILL_PERCEPTION|ID_PROFICIENCY_SKILL_SURVIVAL" number="2" requirements="!ID_XPB_MULTICLASS_WEAPON_WARRIOR" />
+
+			<grant type="Class Feature" id="ID_XPB_CLASS_FEATURE_WEAPON_TYPE" level="1" />
+			<grant type="Class Feature" id="ID_XPB_CLASS_FEATURE_WEAPON_SPIRIT_POSESSION" level="1" />
+			<grant type="Class Feature" id="ID_XPB_CLASS_FEATURE_AWAKENED_WEAPON" level="3" />
+			<grant type="Class Feature" id="ID_XPB_CLASS_FEATURE_ABILITY_SCORE_IMPROVEMENT_WEAPON_WARRIOR" level="4" />
+			<grant type="Class Feature" id="ID_XPB_CLASS_FEATURE_ROOTED_POSESSION" level="10" />
+		</rules>
+		<!-- <multiclass id="ID_XPB_MULTICLASS_WEAPON_WARRIOR">
+			<prerequisite>Intelligence 13</prerequisite>
+			<requirements>[int:13],!(ID_WOTC_UA_CLASS_WEAPON_WARRIOR||ID_WOTC_UA_MULTICLASS_WEAPON_WARRIOR||ID_WOTC_UA20190228_CLASS_WEAPON_WARRIOR||ID_WOTC_UA20190228_MULTICLASS_WEAPON_WARRIOR||ID_WOTC_ERLW_CLASS_WEAPON_WARRIOR||ID_WOTC_ERLW_MULTICLASS_WEAPON_WARRIOR)</requirements>
+			<setters>
+				<set name="multiclass proficiencies">light armor, medium armor, shields, thieves’ tools, tinker’s tools.</set>
+			</setters>
+			<rules>
+				<grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS" />
+			</rules>
+		</multiclass> -->
+	</element>
+	<element name="Weapon Type" type="Class Feature" source="XorpoBrew" id="ID_XPB_CLASS_FEATURE_WEAPON_TYPE">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_WEAPON_WARRIOR_WEAPON_TYPE</requirements>
+		<description>
+			<p>Blade flavor text.</p>
+			<h5 class="caption">STRIKER</h5>
+			<p>Brief striker type flavor text.</p>
+			<h5 class="caption">CASTER</h5>
+			<p>Brief caster type flavor text.</p>
+			<h5 class="caption">SHOOTER</h5>
+			<p>Brief shooter type flavor text.</p>
+		</description>
+		<rules>
+			<select type="Class Feature" name="Weapon Type" supports="Weapon Type, Weapon Warrior" level="1"/>
+		</rules>
+	</element>
+
+	<!-- Weapon Types -->
+	<element name="Striker" type="Weapon Type" source="XorpoBrew" id="ID_XPB_CLASS_FEATURE_WEAPON_TYPE_STRIKER">
+		<supports>Weapon Type, Weapon Warrior</supports>
+		<description>
+			<p>You like hitting things.</p>
+		</description>
+		<sheet>
+			<description>You like hitting things.</description>
+		</sheet>
+		<rules>
+			<select type="Proficiency" name="Weapon Form" supports="ID_PROFICIENCY_WEAPON_PROFICIENCY_DAGGER|ID_PROFICIENCY_WEAPON_PROFICIENCY_LONGSWORD|ID_PROFICIENCY_WEAPON_PROFICIENCY_RAPIER|ID_PROFICIENCY_WEAPON_PROFICIENCY_SHORTSWORD|ID_PROFICIENCY_WEAPON_PROFICIENCY_SCIMITAR|ID_PROFICIENCY_WEAPON_PROFICIENCY_GREATSWORD|ID_PROFICIENCY_WEAPON_PROFICIENCY_CLUB|ID_PROFICIENCY_WEAPON_PROFICIENCY_LIGHT_HAMMER|ID_PROFICIENCY_WEAPON_PROFICIENCY_MACE|ID_PROFICIENCY_WEAPON_PROFICIENCY_QUARTERSTAFF|ID_PROFICIENCY_WEAPON_PROFICIENCY_MORNINGSTAR|ID_PROFICIENCY_WEAPON_PROFICIENCY_FLAIL|ID_PROFICIENCY_WEAPON_PROFICIENCY_GREATCLUB|ID_PROFICIENCY_WEAPON_PROFICIENCY_WARHAMMER|ID_PROFICIENCY_WEAPON_PROFICIENCY_MAUL|ID_PROFICIENCY_WEAPON_PROFICIENCY_HANDAXE|ID_PROFICIENCY_WEAPON_PROFICIENCY_BATTLEAXE|ID_PROFICIENCY_WEAPON_PROFICIENCY_GREATAXE|ID_PROFICIENCY_WEAPON_PROFICIENCY_WHIP|ID_PROFICIENCY_WEAPON_PROFICIENCY_PIKE|ID_PROFICIENCY_WEAPON_PROFICIENCY_HALBERD|ID_PROFICIENCY_WEAPON_PROFICIENCY_GLAIVE|ID_PROFICIENCY_WEAPON_PROFICIENCY_LANCE" number="1"/>
+		</rules>
+	</element>
+</elements>

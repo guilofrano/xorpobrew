@@ -4,7 +4,7 @@
 		<name>XorpoBrew</name>
 		<description>All content from XorpoBrew</description>
 		<author url="https://github.com/guilofrano/">GLC</author>
-		<update version="0.1.2">
+		<update version="0.1.3">
 			<file name="xorpobrew.index" url="https://raw.githubusercontent.com/guilofrano/xorpobrew/main/xorpobrew.index" />
 		</update>
 	</info>
@@ -16,6 +16,7 @@
 
 		<!-- classes -->
 		<!-- <file name="class-alchemist.xml" url="https://raw.githubusercontent.com/guilofrano/xorpobrew/main/classes/class-alchemist.xml" /> -->
+		<file name="class-weapon-warrior.xml" url="https://raw.githubusercontent.com/guilofrano/xorpobrew/main/classes/class-weapon-warrior.xml" />
 
 		<!-- items -->
 		<file name="magic-weapons.xml" url="https://raw.githubusercontent.com/guilofrano/xorpobrew/main/items/magic-weapons.xml" />
