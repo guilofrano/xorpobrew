@@ -1,6 +1,6 @@
 <elements>
 	<info>
-		<update version="0.1.4">
+		<update version="0.1.5">
 			<file name="class-weapon-warrior.xml" url="https://raw.githubusercontent.com/guilofrano/xorpobrew/main/classes/class-weapon-warrior.xml" />
 		</update>
 	</info>
@@ -101,7 +101,7 @@
 		</multiclass> -->
 	</element>
 	<element name="Weapon Type" type="Class Feature" source="XorpoBrew" id="ID_XPB_CLASS_FEATURE_WEAPON_TYPE">
-		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_WEAPON_WARRIOR_WEAPON_TYPE</requirements>
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WEAPON_WARRIOR_WEAPON_TYPE</requirements>
 		<description>
 			<p>Blade flavor text.</p>
 			<h5 class="caption">STRIKER</h5>
@@ -110,6 +110,56 @@
 			<p>Brief caster type flavor text.</p>
 			<h5 class="caption">SHOOTER</h5>
 			<p>Brief shooter type flavor text.</p>
+		</description>
+		<rules>
+			<select type="Class Feature" name="Weapon Type" supports="Weapon Type, Weapon Warrior" level="1"/>
+		</rules>
+	</element>
+
+	<element name="Weapon Type" type="Class Feature" source="XorpoBrew" id="ID_XPB_CLASS_FEATURE_WEAPON_SPIRIT_POSESSION">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WEAPON_WARRIOR_POSESSION</requirements>
+		<description>
+			<p>Spirit Posession flavor text.</p>
+		</description>
+		<sheet>
+			<description>
+				Spirit Posession flavor text.
+			</description>
+		</sheet>
+	</element>
+
+	<element name="Weapon Type" type="Class Feature" source="XorpoBrew" id="ID_XPB_CLASS_FEATURE_AWAKENED_WEAPON">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WEAPON_WARRIOR_AWAKENED_WEAPON</requirements>
+		<description>
+			<p>Awakened Weapon flavor text.</p>
+		</description>
+		<sheet>
+			<description>
+				More better
+			</description>
+		</sheet>
+	</element>
+
+	<element name="Ability Score Improvement" type="Class Feature" source="XorpoBrew" id="ID_XPB_CLASS_FEATURE_ABILITY_SCORE_IMPROVEMENT_WEAPON_WARRIOR">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WEAPON_WARRIOR_ABILITY_SCORE_IMPROVEMENT</requirements>
+		<compendium display="false" />
+		<description>
+			<p>When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Class Feature" name="Improvement Option (Weapon Warrior 4)" supports="Improvement Option,Weapon Warrior,4" level="4" />
+			<select type="Class Feature" name="Improvement Option (Weapon Warrior 8)" supports="Improvement Option,Weapon Warrior,8" level="8" />
+			<select type="Class Feature" name="Improvement Option (Weapon Warrior 12)" supports="Improvement Option,Weapon Warrior,12" level="12" />
+			<select type="Class Feature" name="Improvement Option (Weapon Warrior 16)" supports="Improvement Option,Weapon Warrior,16" level="16" />
+			<select type="Class Feature" name="Improvement Option (Weapon Warrior 19)" supports="Improvement Option,Weapon Warrior,19" level="19" />
+		</rules>
+	</element>
+
+	<element name="Weapon Type" type="Class Feature" source="XorpoBrew" id="ID_XPB_CLASS_FEATURE_ROOTED_POSESSION">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WEAPON_WARRIOR_ROOTED_POSESSION</requirements>
+		<description>
+			<p>Rooted Posession flavor text.</p>
 		</description>
 		<rules>
 			<select type="Class Feature" name="Weapon Type" supports="Weapon Type, Weapon Warrior" level="1"/>
@@ -125,8 +175,24 @@
 		<sheet>
 			<description>You like hitting things.</description>
 		</sheet>
+		<spellcasting name="Weapon Warrior" ability="Wisdom" prepare="false">
+			<list known="true">Weapon Warrior</list>
+		</spellcasting>
 		<rules>
 			<select type="Proficiency" name="Weapon Form" supports="ID_PROFICIENCY_WEAPON_PROFICIENCY_DAGGER|ID_PROFICIENCY_WEAPON_PROFICIENCY_LONGSWORD|ID_PROFICIENCY_WEAPON_PROFICIENCY_RAPIER|ID_PROFICIENCY_WEAPON_PROFICIENCY_SHORTSWORD|ID_PROFICIENCY_WEAPON_PROFICIENCY_SCIMITAR|ID_PROFICIENCY_WEAPON_PROFICIENCY_GREATSWORD|ID_PROFICIENCY_WEAPON_PROFICIENCY_CLUB|ID_PROFICIENCY_WEAPON_PROFICIENCY_LIGHT_HAMMER|ID_PROFICIENCY_WEAPON_PROFICIENCY_MACE|ID_PROFICIENCY_WEAPON_PROFICIENCY_QUARTERSTAFF|ID_PROFICIENCY_WEAPON_PROFICIENCY_MORNINGSTAR|ID_PROFICIENCY_WEAPON_PROFICIENCY_FLAIL|ID_PROFICIENCY_WEAPON_PROFICIENCY_GREATCLUB|ID_PROFICIENCY_WEAPON_PROFICIENCY_WARHAMMER|ID_PROFICIENCY_WEAPON_PROFICIENCY_MAUL|ID_PROFICIENCY_WEAPON_PROFICIENCY_HANDAXE|ID_PROFICIENCY_WEAPON_PROFICIENCY_BATTLEAXE|ID_PROFICIENCY_WEAPON_PROFICIENCY_GREATAXE|ID_PROFICIENCY_WEAPON_PROFICIENCY_WHIP|ID_PROFICIENCY_WEAPON_PROFICIENCY_PIKE|ID_PROFICIENCY_WEAPON_PROFICIENCY_HALBERD|ID_PROFICIENCY_WEAPON_PROFICIENCY_GLAIVE|ID_PROFICIENCY_WEAPON_PROFICIENCY_LANCE" number="1"/>
+
+			<stat name="weapon warrior:spellcasting:slots:1" value="2" level="2" />
+			<stat name="weapon warrior:spellcasting:slots:1" value="1" level="3" />
+			<stat name="weapon warrior:spellcasting:slots:1" value="1" level="5" />
+			<stat name="weapon warrior:spellcasting:slots:2" value="2" level="5" />
+			<stat name="weapon warrior:spellcasting:slots:2" value="1" level="7" />
+			<stat name="weapon warrior:spellcasting:slots:3" value="2" level="9" />
+			<stat name="weapon warrior:spellcasting:slots:3" value="1" level="11" />
+			<stat name="weapon warrior:spellcasting:slots:4" value="1" level="13" />
+			<stat name="weapon warrior:spellcasting:slots:4" value="1" level="15" />
+			<stat name="weapon warrior:spellcasting:slots:4" value="1" level="17" />
+			<stat name="weapon warrior:spellcasting:slots:5" value="1" level="17" />
+			<stat name="weapon warrior:spellcasting:slots:5" value="1" level="19" />
 		</rules>
 	</element>
 </elements>
